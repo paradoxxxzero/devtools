@@ -1,0 +1,172 @@
+body {
+   background-color: #222;
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   margin: 0;
+   overflow: auto;
+   position: absolute;
+   font-size: 0.8em;
+}
+mark {
+   color:  #eee;
+   font-weight: bold;
+}
+p {
+   margin: 0;
+   padding: 0;
+   margin-bottom: 10px;
+}
+a {
+   text-decoration: none;
+   font-style: italic;
+   color: #999;
+}
+a:hover {
+   text-decoration: overline;
+   color: #fff;
+}
+a:visited {
+   color: #777;
+}
+header {
+   background-image: url('res/devtools.png');
+   background-repeat: no-repeat;
+   width: 1024px;
+   height: 170px;
+   margin: auto;
+}
+footer {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   color: #555;
+}
+#keyCodePane {
+   position: relative;
+   height: 320px;
+}
+#hashPane {
+   position: relative;
+   height: 400px;
+}
+#convertPane {
+   position: relative;
+   height: 580px;
+}
+.dt-wrapper {
+   width: 620px;
+   height: 240px;
+   margin: 0;
+   padding: 0;
+   position: absolute;
+   top: 80px;
+   left: 185px;
+}
+.dt-inner {
+   width: 580px;
+   height: 200px;
+   padding: 10px;
+   margin: 0;
+   overflow: hidden;
+   font-family: monospace !important;
+   position: absolute;
+   top: 90px;
+   left: 195px;
+}
+#hashs {
+   position: absolute;
+   top: 340px;
+   left: 30px;
+}
+#converted {
+   position: absolute;
+   top: 350px;
+   left: 30px;
+   width: 95%;
+}
+.hash {
+   position: relative;
+}
+.convert {
+   position: relative;
+   height: 125px;
+}
+.convertedArea {
+   position: absolute;
+   width: 350px;
+   height: 100px;
+   left: 100px;
+   top: 0;
+}
+.sum {
+   position: absolute;
+   left: 100px;
+   top: 0;
+}
+#accordion {
+   width: 1024px;
+   margin: 5px auto;
+}
+.keypressed {
+   clear: both;
+}
+.keycode {
+   float : left;
+}
+.modifier {
+   float: right;
+}
+.large {
+   width: 60%;
+}
+.small {
+   width: 5%;
+}
+.left {
+   float:left;
+   width: 49%;
+}
+.right {
+   float: right;
+   width: 49%;
+}
+.clear {
+   clear: both;
+}
+#test4regex {
+   width: 49%;
+   height: 200px;
+   float: left;
+}
+#regexResults {
+   width: 49%;
+   height: 200px;
+   float: right;
+   overflow: auto;
+   word-wrap: break-word;
+}
+#regex {
+   margin-bottom: 20px;
+}
+#replacement {
+   width: 150px;
+}
+.match {
+   color: #75ABFF;
+}
+#matching {
+   color: #0f0;
+}
+#not-matching {
+   color: #f00;
+}
+#replace-span {
+   padding-left: 25px;
+}
+#isMatching {
+   padding-left: 290px;
+}
+.smallfont {
+   font-size: 0.75em;
+}
