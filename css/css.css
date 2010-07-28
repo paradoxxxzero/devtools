@@ -29,15 +29,15 @@ a:hover {
 a:visited {
    color: #777;
 }
-header {
+.header {
    background-image: url('res/devtools.png');
    background-repeat: no-repeat;
    width: 1024px;
    height: 170px;
    margin: auto;
 }
-footer {
-   position: absolute;
+.footer {
+   position: fixed;
    bottom: 0;
    right: 0;
    color: #555;
