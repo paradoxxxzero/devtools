@@ -11,6 +11,7 @@ body {
 mark {
    color:  #eee;
    font-weight: bold;
+   background-color: transparent;
 }
 p {
    margin: 0;
