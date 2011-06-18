@@ -3,13 +3,15 @@
   <head>
     <title>Slick web development toolkit</title>
     <meta charset="utf-8">
-    <link type="text/css" href="css/contrib/dot-luv/jquery-ui-1.8.2.custom.css" rel="stylesheet" />
+    <link type="text/css" href="css/contrib/dot-luv/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
     <link type="text/css" href="css/css.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/contrib/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="js/contrib/jquery.crypt.js"></script>
-    <script type="text/javascript" src="js/contrib/jquery-ui-1.8.2.custom.min.js"></script> 
-    <script type="text/javascript" src="js/contrib/sha256.js"></script>
+    <script type="text/javascript" src="http://crypto-js.googlecode.com/files/2.2.0-crypto-md5.js"></script>
+    <script type="text/javascript" src="http://crypto-js.googlecode.com/files/2.2.0-crypto-sha1.js"></script>
+    <script type="text/javascript" src="http://crypto-js.googlecode.com/files/2.2.0-crypto-sha256.js"></script>
+    <script type="text/javascript" src="js/contrib/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="js/contrib/jquery-ui-1.8.13.custom.min.js"></script>
     <script type="text/javascript" src="js/contrib/puny.js"></script>
+    <script type="text/javascript" src="js/ascii.js"></script>
     <script type="text/javascript" src="js/keyCode.js"></script>
     <script type="text/javascript" src="js/regex.js"></script>
     <script type="text/javascript" src="js/converters.js"></script>
@@ -35,67 +37,65 @@
     <div id="accordion">
       <h3><a class="accordion-title" href="#KeyCodes">Keys codes on keys events</a></h3>
       <div id="keyCodePane">
-	<p> Type some keys:</p>
-	<div class="ui-overlay">
-	  <div class="ui-widget-shadow ui-corner-all dt-wrapper"></div>
-	</div> 
-	<div id="keyspressed" class="ui-widget ui-widget-content ui-corner-all dt-inner"> 
-	</div> 
+    <p> Type some keys:</p>
+    <div class="ui-overlay">
+      <div class="ui-widget-shadow ui-corner-all dt-wrapper"></div>
+    </div>
+    <div id="keyspressed" class="ui-widget ui-widget-content ui-corner-all dt-inner">
+    </div>
       </div>
       <h3><a class="accordion-title" href="#RegEx">Regular expression testing</a></h3>
       <div>
-	<p>Enter you regex here:</p> 
-	<div>/<input type="text" id="regex" class="ui-widget ui-widget-content ui-corner-all large" value=".*" />/<input type="text" id="modifier" class="ui-widget ui-widget-content ui-corner-all small" value="g" /> <span id="replace-span"> Replacement: <input type="text" id="replacement" class="ui-widget ui-widget-content ui-corner-all" /> </span></div>
-	<div>
-	  <p class="left">Enter you text to match here:</p> 
-	  <p class="right">Result: <span id="isMatching"> Matches: <span id="unknown-matching">?</span><span id="not-matching">No</span><span id="matching">Yes</span></span></p>
-	  <textarea id="test4regex" class="ui-widget ui-widget-content ui-corner-all"></textarea>
-	  <div id="regexResults" class="ui-widget ui-widget-content ui-corner-all">
-	  </div>
-	</div>
+    <p>Enter you regex here:</p>
+    <div>/<input type="text" id="regex" class="ui-widget ui-widget-content ui-corner-all large" value=".*" />/<input type="text" id="modifier" class="ui-widget ui-widget-content ui-corner-all small" value="g" /> <span id="replace-span"> Replacement: <input type="text" id="replacement" class="ui-widget ui-widget-content ui-corner-all" /> </span></div>
+    <div>
+      <p class="left">Enter you text to match here:</p>
+      <p class="right">Result: <span id="isMatching"> Matches: <span id="unknown-matching">?</span><span id="not-matching">No</span><span id="matching">Yes</span></span></p>
+      <textarea id="test4regex" class="ui-widget ui-widget-content ui-corner-all"></textarea>
+      <div id="regexResults" class="ui-widget ui-widget-content ui-corner-all">
       </div>
-      <h3><a class="accordion-title" href="#Convert">Converters: base64, xtea, URI encoding, puny</a></h3>
+    </div>
+      </div>
+      <h3><a class="accordion-title" href="#Convert">Converters: base64, binary, URI encoding, puny</a></h3>
       <div id="convertPane">
-	<p> Enter your text here:</p>
-	<div class="ui-overlay">
-	  <div id="convertWrapper" class="ui-widget-shadow ui-corner-all dt-wrapper"></div>
-	</div> 
-	<textarea id="convertArea" class="ui-widget ui-widget-content ui-corner-all dt-inner"></textarea>
-	<div id="converted">
-	  <div class="left">
-	    <div class="convert"><mark>Base64: </mark><textarea id="base64" class="convertedArea ui-widget-content"></textarea></div>
-	    <div class="convert"><mark>XTEA: </mark><textarea id="xtea" class="convertedArea ui-widget-content"></textarea></div>
-	  </div>
-	  <div class="right">
-	    <div class="convert"><mark>URI: </mark><textarea id="uri" class="convertedArea ui-widget-content"></textarea></div>
-	    <div class="convert"><mark>Puny: </mark><textarea id="puny" class="convertedArea ui-widget-content"></textarea></div>
-	  </div>
-	</div>
+    <p> Enter your text here:</p>
+    <div class="ui-overlay">
+      <div id="convertWrapper" class="ui-widget-shadow ui-corner-all dt-wrapper"></div>
+    </div>
+    <textarea id="convertArea" class="ui-widget ui-widget-content ui-corner-all dt-inner"></textarea>
+    <div id="converted">
+      <div class="left">
+        <div class="convert"><mark>Base64: </mark><textarea id="base64" class="convertedArea ui-widget-content"></textarea></div>
+        <div class="convert"><mark>Binary: </mark><textarea id="binary" class="convertedArea ui-widget-content"></textarea></div>
+      </div>
+      <div class="right">
+        <div class="convert"><mark>URI: </mark><textarea id="uri" class="convertedArea ui-widget-content"></textarea></div>
+        <div class="convert"><mark>Puny: </mark><textarea id="puny" class="convertedArea ui-widget-content"></textarea></div>
+      </div>
+    </div>
       </div>
       <h3><a class="accordion-title" href="#Hash">Hashing: MD5, SHA1, SHA256 </a></h3>
       <div id="hashPane">
-	<p> Enter your text here:</p>
-	<div class="ui-overlay">
-	  <div id="hashWrapper" class="ui-widget-shadow ui-corner-all dt-wrapper"></div>
-	</div> 
-	<textarea id="hashArea" class="ui-widget ui-widget-content ui-corner-all dt-inner"></textarea>
-	<div id="hashs">
-	  <div class="hash"><mark>MD5: </mark><span id="md5" class="sum"></span></div>
-	  <div class="hash"><mark>SHA1: </mark><span id="sha1" class="sum"></span></div>
-	  <div class="hash"><mark>SHA256: </mark><span id="sha256" class="sum"></span></div>
-	</div>
+    <p> Enter your text here:</p>
+    <div class="ui-overlay">
+      <div id="hashWrapper" class="ui-widget-shadow ui-corner-all dt-wrapper"></div>
+    </div>
+    <textarea id="hashArea" class="ui-widget ui-widget-content ui-corner-all dt-inner"></textarea>
+    <div id="hashs">
+      <div class="hash"><mark>MD5: </mark><span id="md5" class="sum"></span></div>
+      <div class="hash"><mark>SHA1: </mark><span id="sha1" class="sum"></span></div>
+      <div class="hash"><mark>SHA256: </mark><span id="sha256" class="sum"></span></div>
+    </div>
       </div>
       <h3><a class="accordion-title" href="#Credits">Credits</a></h3>
       <div>
-	<p><mark>Welcome to devtools.tk, a slick web development toolkit.</mark></p>
-	<br />
-	<p><mark>Based on:</mark> <a href="http://jquery.com/">jQuery</a> and <a href="http://jqueryui.com/">jQueryUI</a></p>
-	<p><mark>Credits to:</mark> <a href="js/contrib/jquery.crypt.js">jQuery Cryptography Plug-in</a>, <a href="js/contrib/puny.js">puny</a> and <a href="js/contrib/sha256.js">sha256</a> implementations. (License in links)</p>
-	<p><mark>Made by:</mark> <a href="http://paradoxxxzero.tk/"> paradoxxx zero </a></p>
-	<p><mark>Logo made at:</mark> <a href="http://www.onlinelogomaker.com/">online logo maker</a></p>
-	<p><mark>For all suggestions, questions, remarks mail me at:</mark> <span id="email"></span></p> 
-	<p><mark>Get the source:</mark> <a href="http://github.com/paradoxxxzero/devtools.tk/">here on github</a></p>
-	<p class="smallfont"><mark>NB:</mark> These hashers/converters are implemented in javascript therefore it may give unexpected results with unicode characters. </p>
+    <p><mark>Welcome to devtools, a slick web development tool suite.</mark></p>
+    <br />
+    <p><mark>Based on:</mark> <a href="http://jquery.com/">jQuery</a> and <a href="http://jqueryui.com/">jQueryUI</a></p>
+    <p><mark>Made by:</mark> <a href="http://paradoxxxzero.tk/"> paradoxxx zero </a></p>
+    <p><mark>Logo made at:</mark> <a href="http://www.onlinelogomaker.com/">online logo maker</a></p>
+    <p><mark>For all suggestions, questions, remarks mail me at:</mark> <span id="email"></span></p>
+    <p><mark>Get the source:</mark> <a href="http://github.com/paradoxxxzero/devtools/">here on github</a></p>
       </div>
     </div>
     <div class="footer">by <a href="http://paradoxxxzero.tk/">paradoxxxzero</a></div>

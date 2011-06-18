@@ -1,7 +1,7 @@
 /*
-    devtools.tk is a slick web development toolkit, available at devtools.tk
+    devtools is a slick web development toolkit, available at devtools
 
-    Copyright (C) 2010 Mounier Florian aka paradoxxxzero
+    Copyright (C) 2011 Mounier Florian aka paradoxxxzero
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as

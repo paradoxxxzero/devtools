@@ -1,7 +1,7 @@
 /*
-    devtools.tk is a slick web development toolkit, available at devtools.tk
+    devtools is a slick web development toolkit, available at devtools
 
-    Copyright (C) 2010 Mounier Florian aka paradoxxxzero
+    Copyright (C) 2011 Mounier Florian aka paradoxxxzero
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -18,13 +18,13 @@
 */
 var hash = function(event) {
     if($("#hashArea").val() != '') {
-	$("#md5").text($("#hashArea").crypt({ method:"md5" }));
-	$("#sha1").text($("#hashArea").crypt({ method:"sha1" }));
-	$("#sha256").text($.sha256($("#hashArea").val()));
+    $("#md5").text(Crypto.MD5($("#hashArea").val()));
+    $("#sha1").text(Crypto.SHA1($("#hashArea").val()));
+    $("#sha256").text(Crypto.SHA256($("#hashArea").val()));
     } else {
-	$("#md5").text('');
-	$("#sha1").text('');
-	$("#sha256").text('');
+    $("#md5").text('');
+    $("#sha1").text('');
+    $("#sha256").text('');
     }
 };
 function initHashEvents() {
